@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc nghiệm nghề nghiệp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Added for Job Search UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- End of Added links -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="animate__delay-1s">
+    <header>
+        <h1>Trắc nghiệm nghề nghiệp</h1>
+        <p>Tìm hiểu phần nào phù hợp với bạn nhất!</p>
+    </header>
+    <section id="content-wrap" class="">
+        <div class="backgound-layer">
+            <img class="theme__bg left__bg animate__animated animate__fadeInUp" src="" alt="">
+            <img class="theme__bg right__bg animate__animated animate__fadeInUp" src="" alt="">
+            <img class="center__bg animate__animated animate__fadeInUp" src="./Achievement.svg" alt="">
+        </div>
+        <div class="animate__animated animate__fadeInDown step step__1 active slogan">
+            <div>
+
+                <h1 class=" animate__animated  animate__fadeInDown">Khơi nguồn đam mê, chắp cánh tương lai!</h1>
+                <p class=" animate__animated  animate__fadeInDown short-des">Bạn đã sẵn sàng khám phá hành trình của
+                    chính mình,
+                    nơi
+                    đam mê trở thành động lực và tương lai mở ra những cơ hội vô hạn?</p>
+                <button class="btn get-started  animate__animated  animate__fadeInDown">Bắt đầu ngay</button>
+            </div>
+        </div>
+
+        <div id="preliminaryQuestion"
+            class="step step__2 container animate__animated  animate__bounce animate__fadeInDown">
+            <div>
+
+                <h2>Từ trước đến nay bạn có biết đến công cụ hướng nghiệp nào chưa?</h2>
+                <div class="question-started">
+                    <button class="btn btn__2" data-answer="Có biết">Đã biết</button>
+                    <button class="btn btn__2" data-answer="Không biết">Chưa biết</button>
+                </div>
+            </div>
+        </div>
+        <div id="frontQuestion" class="step step__3 container  animate__animated  animate__fadeInDown">
+            <h2>Bạn nghĩ rằng mình sẽ phù hợp với nhóm nghề nào?</h2>
+            <ul id="careerOptions">
+                <li>
+                    <button class="animate__animated animate__bounceIn animate__delay-1s career-option animated-button"
+                        data-group="Kỹ thuật"> <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Nhóm R – Kỹ thuật: Kỹ sư, thợ điện, thợ máy, đầu
+                        bếp…
+                    </button>
+                </li>
+                <li>
+                    <button class="animate__animated animate__bounceIn animate__delay-1s career-option animated-button"
+                        data-group="Nghiên cứu"> <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Nhóm I – Nghiên cứu: Nhà toán học, nhà hóa
+                        học,
+                        dược sĩ,…
+                    </button>
+                </li>
+                <li>
+                    <button class="animate__animated animate__bounceIn animate__delay-1s career-option animated-button"
+                        data-group="Nghệ thuật"> <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Nhóm A – Nghệ thuật: Diễn viên, kiến trúc sư,
+                        ca
+                        sĩ…
+                    </button>
+                </li>
+                <li>
+                    <button class="animate__animated animate__bounceIn animate__delay-1s career-option animated-button"
+                        data-group="Xã hội"> <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Nhóm S – Xã hội: Nhà hoạt động xã hội, nhà trị
+                        liệu,
+                        tư vấn,…
+                    </button>
+                </li>
+                <li>
+                    <button class="animate__animated animate__bounceIn animate__delay-1s career-option animated-button"
+                        data-group="Quản lý"> <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Nhóm E – Quản lý: Giám đốc, nhân viên bán hàng,
+                        chủ
+                        doanh nghiệp,…
+                    </button>
+                </li>
+                <li>
+                    <button class="animate__animated animate__bounceIn animate__delay-1s career-option animated-button"
+                        data-group="Nghiệp vụ"> <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Nhóm C – Nghiệp vụ: Kế toán, giáo viên, nhân
+                        viên
+                        ngân hàng,…
+                    </button>
+                </li>
+            </ul>
+        </div>  
+
+        <div id="openingScreen" class="step step__4 animate__animated  animate__fadeInDown container">
+            <div class="content">
+                <h2>Thực hiện trắc nghiệm để định hướng nghề theo công cụ Holand!</h2>
+                <p><strong>TRƯỚC khi thực hiện, các bạn hãy:</strong></p>
+                <p>Hít thở thật sâu 2-3 lần.</p>
+                <p>Hoàn thành chỉ tối đa trong 20 phút.</p>
+                <p><strong>TRONG khi thực hiện, người thực hiện cần:</strong></p>
+                <p>Chọn câu trả lời đến với mình nhanh và tự nhiên nhất.</p>
+                <p>Lựa chọn mức độ đồng ý của mình cho mỗi câu ở các phần tiếp theo bằng cách chọn vào ô tương ứng:</p>
+                <div>
+                    <p class="animate__animated animate__bounceIn animate__delay-1s answer-status">
+                        <span>
+                            Rất thích
+                        </span>
+                        <span>
+                            🥰
+                        </span>
+                    </p>
+                    <p class="animate__animated animate__bounceIn animate__delay-1s answer-status">
+                        <span>
+                            Thích
+                        </span>
+                        <span>
+                            😊
+                        </span>
+                    </p>
+                    <p class="animate__animated animate__bounceIn animate__delay-1s answer-status">
+                        <span>
+                            Bình thường
+                        </span>
+                        <span>
+                            🤔
+                        </span>
+                    </p>
+                    <p class="animate__animated animate__bounceIn animate__delay-1s answer-status">
+                        <span>
+                            Không thích
+                        </span>
+                        <span>
+                            🙁
+                        </span>
+                    </p>
+                    <p class="animate__animated animate__bounceIn animate__delay-1s answer-status">
+                        <span>
+                            Rất không thích
+                        </span>
+                        <span>
+                            😡
+                        </span>
+                    </p>
+                </div>
+            </div>
+            
+            <button id="startButton">Bắt đầu</button>
+        </div>
+
+        <div id="quizSection" class="step step__5 animate__animated  animate__fadeInDown container"
+            style="display: none;">
+            <div id="quizContainer"></div>
+        </div>
+
+        <div id="result" class="step step__6 animate__animated  animate__fadeInDown  container" style="display: none;">
+            <p id="resultText"></p>
+        </div>
+
+        <div id="completionScreen" class="step step__7 animate__animated  animate__fadeInDown  container"
+            style="display: none;">
+            <h2>Chúc mừng bạn đã hoàn thành bài trắc nghiệm!</h2>
+            <p>Vui lòng điền thông tin bên dưới để xem kết quả.</p>
+            <form id="resultForm">
+                <label for="username">Tên người dùng</label>
+                <input type="text" id="username" name="username" required>
+                <label for="grade">Lớp</label>
+                <input type="text" id="grade" name="grade" required>
+                <label for="school">Trường</label>
+                <input type="text" id="school" name="school" required>
+                <button type="submit">Gửi kết quả</button>
+            </form>
+        </div>
+        <div class="animate__animated animate__fadeInDown step step__8 completed">
+            <div>
+
+                <h1 class=" animate__animated  animate__fadeInDown">Chúc mừng bạn đã hoàn thành!</h1>
+                <p class=" animate__animated  animate__fadeInDown">Kết quả khảo sát sẽ giúp bạn hiểu rõ hơn về bản thân
+                    và tìm ra con đường nghề nghiệp phù hợp nhất</p>
+                <button class="btn re-started  animate__animated  animate__fadeInDown">Khảo sát lại</button>
+            </div>
+        </div>
+
+        <div id="settingsButton" class="settings-button" onclick="toggleSettingsMenu()">
+            ⚙️
+        </div>
+
+        <!-- NEW: Job Search Button -->
+        <div id="jobSearchButton" class="job-search-button" onclick="toggleJobSearch()" title="Tra cứu nghề">
+            📚
+        </div>
+
+
+        <div id="settingsMenu" class="settings-menu hidden">
+            <label for="fontStyle">Font Style:</label>
+            <select id="fontStyle" onchange="changeFontStyle(event)">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
+
+            <label for="themeMode">Theme:</label>
+            <select id="themeMode" onchange="toggleThemeMode(event)">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+
+            <label for="fontSize">Question Size:</label>
+            <select id="fontSize" onchange="changeFontSize(event)">
+                <option value="16">16 px</option>
+                <option value="18">18 px</option>
+                <option value="20">20 px</option>
+                <option value="24">24 px</option>
+                <option value="28">28 px</option>
+                <option value="30">30 px</option>
+                <option value="32">32 px</option>
+                <option value="36">36 px</option>
+            </select>
+
+
+            <div id="musicPlayer">
+                <label for="musicSelect">Choose Music:</label>
+                <select id="musicSelect" onchange="selectMusic()">
+                    <option value="Đi Giữa Trời Rực Rỡ Lyrics.mp3">Đi Giữa Trời Rực Rỡ </option>
+                    <option value="Một Ngày Chẳng Nắng.mp3">Một Ngày Chẳng Nắng</option>
+                </select>
+                <audio id="audioPlayer"></audio> <!--removed controls-->
+                <div id="customAudioControls"> </div>
+                <button onclick="retakeQuiz()">Retake Quiz</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Job Search Modal Container -->
+    <div id="jobSearchContainer" class="hidden">
+        <button class="close-job-search-btn" onclick="toggleJobSearch()">×</button>
+        <div class="container mx-auto p-4 md:p-8">
+            <!-- Header Section -->
+            <header class="text-center mb-8 pt-8">
+                <h1 class="text-3xl md:text-4xl font-bold text-blue-600">Sách Tra Cứu Nghề</h1>
+                <p class="text-gray-600 mt-2">Tìm kiếm và lọc các cơ hội nghề nghiệp dựa trên tài liệu của ILO.</p>
+            </header>
+
+            <!-- Search and Filter Section -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-8 sticky top-0 z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Search Input -->
+                    <div>
+                        <label for="searchInput" class="block text-sm font-medium text-gray-700 mb-1">Tìm kiếm theo tên nghề</label>
+                        <input type="text" id="searchInput" placeholder="Ví dụ: Giáo viên, Kĩ sư..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <!-- Filter by Group -->
+                    <div>
+                        <label for="groupFilter" class="block text-sm font-medium text-gray-700 mb-1">Lọc theo nhóm nghề</label>
+                        <select id="groupFilter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Tất cả các nhóm</option>
+                        </select>
+                    </div>
+                    <!-- Filter by Education -->
+                    <div>
+                        <label for="educationFilter" class="block text-sm font-medium text-gray-700 mb-1">Lọc theo học vấn</label>
+                        <select id="educationFilter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Tất cả học vấn</option>
+                        </select>
+                    </div>
+                    <!-- Filter by Holland Code -->
+                    <div>
+                        <label for="hollandFilter" class="block text-sm font-medium text-gray-700 mb-1">Lọc theo mã Holland</label>
+                        <select id="hollandFilter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Tất cả mã Holland</option>
+                        </select>
+                    </div>
+                </div>
+                 <div class="flex justify-center mt-4">
+                    <button id="clearFilters" class="px-6 py-2 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition duration-300">Xóa bộ lọc</button>
+                </div>
+            </div>
+
+            <!-- Job Listings Section -->
+            <main id="jobListings" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Job cards will be inserted here by JavaScript -->
+            </main>
+            
+            <!-- No results message -->
+            <div id="noResults" class="text-center py-12 text-gray-500 text-xl hidden">
+                <p>Không tìm thấy kết quả phù hợp.</p>
+            </div>
+            
+            <!-- Pagination Section -->
+            <div id="pagination" class="mt-8 flex justify-center items-center space-x-1">
+                <!-- Pagination controls will be inserted here -->
+            </div>
+        </div>
+    </div>
+    <!-- END: Job Search Modal Container -->
+
+
+    <!-- Nhung chat bot -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "mD9CGOMApvOg55SEFEegX",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="mD9CGOMApvOg55SEFEegX" domain="www.chatbase.co" defer>
+    </script>
+    <script>!function(s,u,b,i,z){var o,t,r,y;s[i]||(s._sbzaccid=z,s[i]=function(){s[i].q.push(arguments)},s[i].q=[],s[i]("setAccount",z),r=["widget.subiz.net","storage.googleapis"+(t=".com"),"app.sbz.workers.dev",i+"a"+(o=function(k,t){var n=t<=6?5:o(k,t-1)+o(k,t-3);return k!==t?n:n.toString(32)})(20,20)+t,i+"b"+o(30,30)+t,i+"c"+o(40,40)+t],(y=function(k){var t,n;s._subiz_init_2094850928430||r[k]&&(t=u.createElement(b),n=u.getElementsByTagName(b)[0],t.async=1,t.src="https://"+r[k]+"/sbz/app.js?accid="+z,n.parentNode.insertBefore(t,n),setTimeout(y,2e3,k+1))})(0))}(window,document,"script","subiz","acsivgmgisfbjtygxddc");</script>    
+    <script src="script.js"></script>
+</body>
+
+</html>
