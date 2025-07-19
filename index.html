@@ -23,7 +23,159 @@
         <div class="backgound-layer">
             <img class="theme__bg left__bg animate__animated animate__fadeInUp" src="" alt="">
             <img class="theme__bg right__bg animate__animated animate__fadeInUp" src="" alt="">
-            <img class="center__bg animate__animated animate__fadeInUp" src="./Achievement.svg" alt="">
+            <img class="center__bg animate__animated animate__fadeInUp" src="./Achievement.svg" alt="" style="cursor:pointer;"
+                onclick="showSplashEffect(this)"
+                ontouchstart="showSplashEffect(this)">
+
+            <div id="splashEffect" style="position:absolute; pointer-events:none; left:0; top:0; width:0; height:0; z-index:9999;"></div>
+
+            <script>
+            // Detect mobile device
+            function isMobile() {
+                return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+            }
+
+            // DRAGON TRAIL EFFECT (desktop)
+            let dragonTrail = [];
+            let dragonInterval = null;
+            const dragonEmojis = ['🐉', '🐲', '🔥', '✨', '🌟'];
+            function createDragonTrail(x, y) {
+                const splash = document.getElementById('splashEffect');
+                const emoji = document.createElement('div');
+                emoji.textContent = dragonEmojis[Math.floor(Math.random() * dragonEmojis.length)];
+                emoji.style.position = 'absolute';
+                emoji.style.left = (x - 16) + 'px';
+                emoji.style.top = (y - 16 + window.scrollY) + 'px';
+                emoji.style.fontSize = '2rem';
+                emoji.style.pointerEvents = 'none';
+                emoji.style.opacity = '1';
+                emoji.style.transition = 'opacity 0.7s linear, transform 0.7s linear';
+                splash.appendChild(emoji);
+                setTimeout(() => {
+                    emoji.style.opacity = '0';
+                    emoji.style.transform = 'scale(1.5)';
+                }, 10);
+                setTimeout(() => splash.removeChild(emoji), 700);
+            }
+
+            // BURST EFFECT (mobile)
+            function showBurstEffect(x, y) {
+                const splash = document.getElementById('splashEffect');
+                const splashSize = 60;
+                splash.style.left = (x - splashSize / 2) + 'px';
+                splash.style.top = (y - splashSize / 2 + window.scrollY) + 'px';
+                splash.style.width = splashSize + 'px';
+                splash.style.height = splashSize + 'px';
+                splash.innerHTML = '';
+                for (let i = 0; i < 18; i++) {
+                    const emoji = document.createElement('div');
+                    emoji.textContent = dragonEmojis[Math.floor(Math.random() * dragonEmojis.length)];
+                    emoji.style.position = 'absolute';
+                    emoji.style.left = splashSize / 2 + 'px';
+                    emoji.style.top = splashSize / 2 + 'px';
+                    emoji.style.fontSize = '2rem';
+                    emoji.style.opacity = '0';
+                    emoji.style.pointerEvents = 'none';
+                    const angle = (i / 18) * 2 * Math.PI;
+                    const distance = 60 + Math.random() * 20;
+                    const dx = Math.cos(angle) * distance;
+                    const dy = Math.sin(angle) * distance;
+                    emoji.animate([
+                        { transform: 'translate(0,0) scale(1)', opacity: 0 },
+                        { transform: `translate(${dx / 2}px,${dy / 2}px) scale(1.2)`, opacity: 0.8 },
+                        { transform: `translate(${dx}px,${dy}px) scale(1.5)`, opacity: 0 }
+                    ], {
+                        duration: 900,
+                        easing: 'ease-out',
+                        fill: 'forwards'
+                    });
+                    splash.appendChild(emoji);
+                }
+                setTimeout(() => splash.innerHTML = '', 900);
+            }
+
+            // Attach dragon trail or burst effect
+            if (!isMobile()) {
+                // Desktop: dragon trail follows mouse
+                document.addEventListener('mousemove', function(e) {
+                    createDragonTrail(e.clientX, e.clientY);
+                });
+                // Also on center__bg image
+                document.addEventListener('DOMContentLoaded', function () {
+                    const img = document.querySelector('.center__bg');
+                    if (img) {
+                        img.addEventListener('mousemove', function(e) {
+                            createDragonTrail(e.clientX, e.clientY);
+                        });
+                        img.setAttribute('tabindex', '0');
+                        img.addEventListener('focus', function (e) {
+                            // Show a little burst at center of image on focus
+                            const rect = img.getBoundingClientRect();
+                            createDragonTrail(rect.left + rect.width / 2, rect.top + rect.height / 2);
+                        });
+                    }
+                });
+            } else {
+                // Mobile: burst effect on tap
+                document.addEventListener('touchstart', function(e) {
+                    const touch = e.touches[0];
+                    showBurstEffect(touch.clientX, touch.clientY);
+                });
+                document.addEventListener('DOMContentLoaded', function () {
+                    const img = document.querySelector('.center__bg');
+                    if (img) {
+                        img.addEventListener('touchstart', function(e) {
+                            const rect = img.getBoundingClientRect();
+                            showBurstEffect(rect.left + rect.width / 2, rect.top + rect.height / 2);
+                        });
+                        img.setAttribute('tabindex', '0');
+                    }
+                });
+            }
+
+            // Attach splash effect to body clicks (not image)
+            document.addEventListener('click', function(e) {
+                showSplashEffect(e.clientX, e.clientY);
+            });
+            document.addEventListener('touchstart', function(e) {
+                const touch = e.touches[0];
+                showSplashEffect(touch.clientX, touch.clientY);
+            });
+
+            // Make splash effect happen on click, touch, and keyboard tab (focus)
+            document.addEventListener('DOMContentLoaded', function () {
+                const img = document.querySelector('.center__bg');
+                if (img) {
+                    img.addEventListener('click', function () {
+                        showSplashEffect(img);
+                    });
+                    img.addEventListener('touchstart', function () {
+                        showSplashEffect(img);
+                    });
+                    img.addEventListener('keydown', function (e) {
+                        // Trigger splash on Enter or Space when focused
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            showSplashEffect(img);
+                        }
+                    });
+                    img.setAttribute('tabindex', '0'); // Make image focusable
+                    img.addEventListener('focus', function () {
+                        showSplashEffect(img);
+                    });
+                }
+            });
+
+            // Simple splash animation
+            const style = document.createElement('style');
+            style.innerHTML = `
+            @keyframes splashAnim {
+                0% { transform: scale(0.5); opacity: 1; }
+                80% { transform: scale(1.2); opacity: 0.8; }
+                100% { transform: scale(1.5); opacity: 0; }
+            }
+            `;
+            document.head.appendChild(style);
+            </script>
         </div>
         <div class="animate__animated animate__fadeInDown step step__1 active slogan">
             <div>
